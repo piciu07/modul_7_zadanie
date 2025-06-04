@@ -65,6 +65,13 @@ unique_edu=get_edu(all_df)
 with st.sidebar:
     st.header("Powiedz nam coś o sobie")
     st.markdown("Pomożemy Ci znaleźć osoby, które mają podobne zainteresowania")
+
+    gender = st.radio("Płeć", ['Mężczyzna', 'Kobieta'])
+    # Sprawdzamy, czy istnieje plik JPG o nazwie zwierzęcia
+    image_path = f"jpg/{gender}.jpg"
+    if os.path.exists(image_path):
+        st.image(image_path, use_container_width=True)
+
     age = st.selectbox("Wiek", unique_age)
     edu_level = st.selectbox("Wykształcenie", unique_edu)
     fav_animals = st.selectbox("Ulubione zwierzęta", unique_animals)
@@ -85,11 +92,7 @@ with st.sidebar:
         if fav_place == place and os.path.exists(image_path):
             st.image(image_path, use_container_width=True)
 
-    gender = st.radio("Płeć", ['Mężczyzna', 'Kobieta'])
-    # Sprawdzamy, czy istnieje plik JPG o nazwie zwierzęcia
-    image_path = f"jpg/{gender}.jpg"
-    if os.path.exists(image_path):
-        st.image(image_path, use_container_width=True)
+
 
 
     person_df = pd.DataFrame([
