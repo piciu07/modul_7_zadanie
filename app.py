@@ -73,7 +73,7 @@ with st.sidebar:
         st.image(image_path, use_container_width=True)
 
     age = st.selectbox("Wiek", unique_age)
-    edu_level = st.selectbox("Wykształcenie", unique_edu)
+    edu_level = st.selectbox("Wykształcenie", "Wybierz wykstałcenie", unique_edu)
     fav_animals = st.selectbox("Ulubione zwierzęta", unique_animals)
 
     for animal in unique_animals:
