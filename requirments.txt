@@ -1,4 +1,4 @@
 streamlit
-pycaret[full]
+pycaret
 json
 pandas
