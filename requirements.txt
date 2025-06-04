@@ -1,0 +1,6 @@
+openai
+python-dotenv
+streamlit
+pycaret[full]
+pandas
+scikit-learn==1.2.2
