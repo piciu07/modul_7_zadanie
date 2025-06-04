@@ -59,9 +59,14 @@ model = get_model()
 all_df = get_all_participants()
 print(all_df)
 unique_animals=get_animals(all_df)
+unique_animals = ["Wybierz zwierzę"] + unique_animals
 unique_place=get_place(all_df)
+unique_place = ["Wybierz miejsce"] + unique_place
 unique_age=get_age(all_df)
+unique_age = ["Wybierz wiek"] + unique_age
 unique_edu=get_edu(all_df)
+unique_edu = ["Wybierz wykształcenie"] + unique_edu
+
 with st.sidebar:
     st.header("Powiedz nam coś o sobie")
     st.markdown("Pomożemy Ci znaleźć osoby, które mają podobne zainteresowania")
@@ -73,7 +78,7 @@ with st.sidebar:
         st.image(image_path, use_container_width=True)
 
     age = st.selectbox("Wiek", unique_age)
-    edu_level = st.selectbox("Wykształcenie", "Wybierz wykstałcenie", unique_edu)
+    edu_level = st.selectbox("Wykształcenie", unique_edu)
     fav_animals = st.selectbox("Ulubione zwierzęta", unique_animals)
 
     for animal in unique_animals:
