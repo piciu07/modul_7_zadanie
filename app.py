@@ -40,7 +40,7 @@ required_features = list(model.feature_names_in_)
 # --- SIDEBAR ---
 with st.sidebar:
     st.header("🎯 Powiedz coś o sobie")
-    st.markdown("Wybierz dowolne z poniższych cech. Im więcej podasz, tym trafniejsze dopasowanie!")
+    st.markdown("Wybierz dowolne z poniższych opcji. Im więcej podasz, tym trafniejsze dopasowanie!")
 
     user_input = {}
     for col in required_features:
@@ -60,7 +60,7 @@ with st.sidebar:
 
 # Walidacja: czy użytkownik wybrał cokolwiek
 if not user_input:
-    st.warning("⚠️ Wybierz przynajmniej jedną cechę z lewej strony, aby kontynuować.")
+    st.warning("⚠️ Wybierz przynajmniej jedną opcję z lewej strony, aby kontynuować.")
 else:
     st.title("🔍 Znajdź swoich ludzi")
 
